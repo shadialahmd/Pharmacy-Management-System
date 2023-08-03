@@ -166,7 +166,7 @@
             <?php
               $seq_no = 0;
               $total = 0;
-              $query = "SELECT * FROM sales WHERE INVOICE_ID = $invoice_number";
+              $query = "SELECT * FROM invoices WHERE INVOICE_ID = $invoice_number";
               $result = mysqli_query($con, $query);
               while($row = mysqli_fetch_array($result)) {
                 $seq_no++;
