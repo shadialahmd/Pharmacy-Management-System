@@ -85,8 +85,8 @@
       $doctor_address = $row['DOCTOR_ADDRESS'];
 
       $query = "SELECT * FROM invoices WHERE INVOICE_NUMBER = $invoice_number";
-      $result2 = mysqli_query($con, $query);
-      $row = mysqli_fetch_array($result2);
+      $result = mysqli_query($con, $query);
+      $row = mysqli_fetch_array($result);
       $invoice_date = $row['INVOICE_DATE'];
       $total_amount = $row['TOTAL_AMOUNT'];
       $total_discount = $row['TOTAL_DISCOUNT'];
