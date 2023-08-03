@@ -166,7 +166,7 @@
             <?php
               $seq_no = 0;
               $total = 0;
-             echo $query = "SELECT * FROM purchases WHERE INVOICE_NUMBER = $invoice_number";
+              $query = "SELECT * FROM purchases WHERE INVOICE_NUMBER = $invoice_number";
               $result = mysqli_query($con, $query);
               while($row = mysqli_fetch_array($result)) {
                 $seq_no++;
