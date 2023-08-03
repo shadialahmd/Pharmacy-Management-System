@@ -75,7 +75,8 @@
   function printInvoice($invoice_number) {
     require "db_connection.php";
     if($con) {
-      $query = "SELECT * FROM sales INNER JOIN customers ON sales.CUSTOMER_ID = customers.ID WHERE INVOICE_NUMBER = $invoice_number";
+     // old $query = "SELECT * FROM sales INNER JOIN customers ON sales.CUSTOMER_ID = customers.ID WHERE INVOICE_NUMBER = $invoice_number";
+     $query = "SELECT * FROM invoices INNER JOIN customers ON invoices.CUSTOMER_ID = customers.ID WHERE INVOICE_ID = 3";
       $result = mysqli_query($con, $query);
       $row = mysqli_fetch_array($result);
       $customer_name = $row['NAME'];
@@ -84,7 +85,8 @@
       $doctor_name = $row['DOCTOR_NAME'];
       $doctor_address = $row['DOCTOR_ADDRESS'];
 
-      $query = "SELECT * FROM invoices WHERE INVOICE_NUMBER = $invoice_number";
+      // old $query = "SELECT * FROM invoices WHERE INVOICE_NUMBER = $invoice_number";
+      $query = "SELECT * FROM invoices WHERE INVOICE_ID = $invoice_number";
       $result = mysqli_query($con, $query);
       $row = mysqli_fetch_array($result);
       $invoice_date = $row['INVOICE_DATE'];
